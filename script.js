@@ -1,29 +1,34 @@
 // Array of special characters to be included in password
-var specialCharacters = [
-  '@',
-  '%',
-  '+',
-  '\\',
-  '/',
-  "'",
-  '!',
-  '#',
-  '$',
-  '^',
-  '?',
-  ':',
-  ',',
-  ')',
-  '(',
-  '}',
-  '{',
-  ']',
-  '[',
-  '~',
-  '-',
-  '_',
-  '.'
-];
+function getSpecialCharacters() {
+  const specialCharacters = [
+    '@',
+    '%',
+    '+',
+    '\\',
+    '/',
+    "'",
+    '!',
+    '#',
+    '$',
+    '^',
+    '?',
+    ':',
+    ',',
+    ')',
+    '(',
+    '}',
+    '{',
+    ']',
+    '[',
+    '~',
+    '-',
+    '_',
+    '.',
+  ];
+  return specialCharacters[
+    Math.floor(Math.random() * specialCharacters.length)
+  ];
+}
 
 // Array of numeric characters to be included in password
 var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -55,7 +60,7 @@ var lowerCasedCharacters = [
   'w',
   'x',
   'y',
-  'z'
+  'z',
 ];
 
 // Array of uppercase characters to be included in password
@@ -85,23 +90,17 @@ var upperCasedCharacters = [
   'W',
   'X',
   'Y',
-  'Z'
+  'Z',
 ];
 
 // Function to prompt user for password options
-function getPasswordOptions() {
-
-}
+function getPasswordOptions() {}
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-
-}
+function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {
-
-}
+function generatePassword() {}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
