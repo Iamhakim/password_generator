@@ -31,10 +31,13 @@ function getSpecialCharacters() {
 }
 
 // Array of numeric characters to be included in password
-var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
-// Array of lowercase characters to be included in password
-var lowerCasedCharacters = [
+const getNumericCharacters (){
+  const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  return Math.floor(Math.random() * numericCharacters.length)
+}
+  
+  // Array of lowercase characters to be included in password
+  var lowerCasedCharacters = [
   'a',
   'b',
   'c',
