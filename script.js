@@ -1,43 +1,40 @@
+'use strict';
 // Array of special characters to be included in password
-function getSpecialCharacters() {
-  const specialCharacters = [
-    '@',
-    '%',
-    '+',
-    '\\',
-    '/',
-    "'",
-    '!',
-    '#',
-    '$',
-    '^',
-    '?',
-    ':',
-    ',',
-    ')',
-    '(',
-    '}',
-    '{',
-    ']',
-    '[',
-    '~',
-    '-',
-    '_',
-    '.',
-  ];
-  return specialCharacters[
-    Math.floor(Math.random() * specialCharacters.length)
-  ];
-}
+let specialCharacters = [
+  '@',
+  '%',
+  '+',
+  '\\',
+  '/',
+  "'",
+  '!',
+  '#',
+  '$',
+  '^',
+  '?',
+  ':',
+  ',',
+  ')',
+  '(',
+  '}',
+  '{',
+  ']',
+  '[',
+  '~',
+  '-',
+  '_',
+  '.',
+];
+let getSpecialCharacter =
+  specialCharacters[Math.floor(Math.random() * specialCharacters.length)];
+// console.log(getSpecialCharacter);
 
 // Array of numeric characters to be included in password
-const getNumericCharacters (){
-  const numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  return Math.floor(Math.random() * numericCharacters.length)
-}
-  
-  // Array of lowercase characters to be included in password
-  var lowerCasedCharacters = [
+let numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let getNumeric = Math.floor(Math.random() * numericCharacters.length);
+// console.log(getNumeric);
+// Array of lowercase characters to be included in password
+let lowerCasedCharacters = [
   'a',
   'b',
   'c',
@@ -65,9 +62,13 @@ const getNumericCharacters (){
   'y',
   'z',
 ];
+let getLower =
+  lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
+// console.log(getLower);
 
 // Array of uppercase characters to be included in password
-var upperCasedCharacters = [
+
+let upperCasedCharacters = [
   'A',
   'B',
   'C',
@@ -95,23 +96,36 @@ var upperCasedCharacters = [
   'Y',
   'Z',
 ];
+let getUpper =
+  upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
 
+// console.log(getUpper);
+
+let concated = [].concat(getNumeric, getSpecialCharacter, getLower, getUpper);
+console.log(concated);
 // Function to prompt user for password options
-function getPasswordOptions() {}
+function getPasswordOptions() {
+  let password = prompt('create you password here');
+  return password;
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {}
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  let practicePassword = concated;
+  for (let i = 0; i < concated.length; i++) practicePassword += concated;
+  return practicePassword;
+}
 
 // Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
+let generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+  let password = generatePassword();
+  let passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 }
